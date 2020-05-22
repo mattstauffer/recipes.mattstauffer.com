@@ -17,7 +17,7 @@
     <p class="text-gray-700 text-xl md:mt-0">
     {{ $page->author }}  •  {{ date('F j, Y', $page->date) }}
     @if ($page->source)
-        • <a href="{{ $page->source }}">Source</a>
+        • <a href="{{ $page->source }}" target="_blank">Source</a>
     @endif
     </p>
 
