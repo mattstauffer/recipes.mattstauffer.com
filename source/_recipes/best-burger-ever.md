@@ -1,6 +1,6 @@
 ---
 title: Allrecipes' "Best Hamburger Ever"
-date: 2020-04-22
+date: 2020-04-21
 description: Pretty great simple hamburger from Allrecipes.
 cover_image: /assets/img/best-hamburger-ever.jpg
 featured: true
