@@ -4,6 +4,7 @@ date: 2020-04-22
 description: Pretty great simple hamburger from Allrecipes.
 cover_image: /assets/img/best-hamburger-ever.jpg
 featured: true
+source: https://www.allrecipes.com/recipe/19863/best-burger-ever/
 categories: [grill]
 ---
 
