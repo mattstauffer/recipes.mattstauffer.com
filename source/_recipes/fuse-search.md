@@ -1,5 +1,5 @@
 ---
-extends: _layouts.post
+extends: _layouts.recipe
 section: content
 title: Fuse Search
 date: 2018-12-22

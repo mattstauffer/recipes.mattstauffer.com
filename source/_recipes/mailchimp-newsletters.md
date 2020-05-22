@@ -1,5 +1,5 @@
 ---
-extends: _layouts.post
+extends: _layouts.recipe
 section: content
 title: Mailchimp Newsletters
 date: 2018-11-21

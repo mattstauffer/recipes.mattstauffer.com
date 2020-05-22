@@ -1,5 +1,5 @@
 ---
-extends: _layouts.post
+extends: _layouts.recipe
 section: content
 title: Customizing Your Site
 date: 2018-12-24

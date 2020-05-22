@@ -1,5 +1,5 @@
 ---
-extends: _layouts.post
+extends: _layouts.recipe
 section: content
 title: My First Blog Post
 date: 2017-03-23

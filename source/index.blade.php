@@ -1,25 +1,25 @@
 @extends('_layouts.master')
 
 @section('body')
-    @foreach ($posts->where('featured', true) as $featuredPost)
+    @foreach ($recipes->where('featured', true) as $featuredRecipe)
         <div class="w-full mb-6">
-            @if ($featuredPost->cover_image)
-                <img src="{{ $featuredPost->cover_image }}" alt="{{ $featuredPost->title }} cover image" class="mb-6">
+            @if ($featuredRecipe->cover_image)
+                <img src="{{ $featuredRecipe->cover_image }}" alt="{{ $featuredRecipe->title }} cover image" class="mb-6">
             @endif
 
             <p class="text-gray-700 font-medium my-2">
-                {{ $featuredPost->getDate()->format('F j, Y') }}
+                {{ $featuredRecipe->getDate()->format('F j, Y') }}
             </p>
 
             <h2 class="text-3xl mt-0">
-                <a href="{{ $featuredPost->getUrl() }}" title="Read {{ $featuredPost->title }}" class="text-gray-900 font-extrabold">
-                    {{ $featuredPost->title }}
+                <a href="{{ $featuredRecipe->getUrl() }}" title="Read {{ $featuredRecipe->title }}" class="text-gray-900 font-extrabold">
+                    {{ $featuredRecipe->title }}
                 </a>
             </h2>
 
-            <p class="mt-0 mb-4">{!! $featuredPost->getExcerpt() !!}</p>
+            <p class="mt-0 mb-4">{!! $featuredRecipe->getExcerpt() !!}</p>
 
-            <a href="{{ $featuredPost->getUrl() }}" title="Read - {{ $featuredPost->title }}" class="uppercase tracking-wide mb-4">
+            <a href="{{ $featuredRecipe->getUrl() }}" title="Read - {{ $featuredRecipe->title }}" class="uppercase tracking-wide mb-4">
                 Read
             </a>
         </div>
@@ -29,13 +29,11 @@
         @endif
     @endforeach
 
-    @include('_components.newsletter-signup')
-
-    @foreach ($posts->where('featured', false)->take(6)->chunk(2) as $row)
+    @foreach ($recipes->where('featured', false)->take(6)->chunk(2) as $row)
         <div class="flex flex-col md:flex-row md:-mx-6">
-            @foreach ($row as $post)
+            @foreach ($row as $recipe)
                 <div class="w-full md:w-1/2 md:mx-6">
-                    @include('_components.post-preview-inline')
+                    @include('_components.recipe-preview-inline')
                 </div>
 
                 @if (! $loop->last)

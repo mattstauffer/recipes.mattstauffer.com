@@ -3,24 +3,26 @@
 use Illuminate\Support\Str;
 
 return [
-    'baseUrl' => '',
+    'baseUrl' => 'http://matt-cooking.test',
     'production' => false,
-    'siteName' => 'Blog Starter Template',
-    'siteDescription' => 'Generate an elegant blog with Jigsaw',
-    'siteAuthor' => 'Author Name',
+    'siteName' => "Matt's Recipes",
+    'siteDescription' => 'Recipes from Matt Stauffer',
+    'siteAuthor' => 'Matt Stauffer',
 
     // collections
     'collections' => [
-        'posts' => [
-            'author' => 'Author Name', // Default author, if not provided in a post
+        'recipes' => [
+            'author' => 'Matt Stauffer', // Default author, if not provided in a recipe
             'sort' => '-date',
-            'path' => 'blog/{filename}',
+            'path' => 'recipes/{filename}',
+            'section' => 'content',
+            'extends' => '_layouts.recipe',
         ],
         'categories' => [
-            'path' => '/blog/categories/{filename}',
-            'posts' => function ($page, $allPosts) {
-                return $allPosts->filter(function ($post) use ($page) {
-                    return $post->categories ? in_array($page->getFilename(), $post->categories, true) : false;
+            'path' => '/recipes/categories/{filename}',
+            'recipes' => function ($page, $allRecipes) {
+                return $allRecipes->filter(function ($recipe) use ($page) {
+                    return $recipe->categories ? in_array($page->getFilename(), $recipe->categories, true) : false;
                 });
             },
         ],

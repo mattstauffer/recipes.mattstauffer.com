@@ -8,7 +8,7 @@ class GenerateIndex
 {
     public function handle(Jigsaw $jigsaw)
     {
-        $data = collect($jigsaw->getCollection('posts')->map(function ($page) use ($jigsaw) {
+        $data = collect($jigsaw->getCollection('recipes')->map(function ($page) use ($jigsaw) {
             return [
                 'title' => $page->title,
                 'categories' => $page->categories,

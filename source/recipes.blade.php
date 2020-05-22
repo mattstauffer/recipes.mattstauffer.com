@@ -1,26 +1,26 @@
 ---
 pagination:
-    collection: posts
+    collection: recipes
     perPage: 4
 ---
 @extends('_layouts.master')
 
 @push('meta')
-    <meta property="og:title" content="{{ $page->siteName }} Blog" />
+    <meta property="og:title" content="{{ $page->siteName }} Recipes" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ $page->getUrl() }}"/>
-    <meta property="og:description" content="The list of blog posts for {{ $page->siteName }}" />
+    <meta property="og:description" content="The list of recipes for {{ $page->siteName }}" />
 @endpush
 
 @section('body')
-    <h1>Blog</h1>
+    <h1>Recipes</h1>
 
     <hr class="border-b my-6">
 
-    @foreach ($pagination->items as $post)
-        @include('_components.post-preview-inline')
+    @foreach ($pagination->items as $recipe)
+        @include('_components.recipe-preview-inline')
 
-        @if ($post != $pagination->items->last())
+        @if ($recipe != $pagination->items->last())
             <hr class="border-b my-6">
         @endif
     @endforeach

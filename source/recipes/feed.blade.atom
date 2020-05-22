@@ -1,0 +1,7 @@
+@extends('_layouts.rss')
+
+@section('entries')
+    @foreach ($recipes as $entry)
+        @include('_components.recipe-as-rss-item')
+    @endforeach
+@endsection
