@@ -15,7 +15,7 @@
     <h1 class="leading-none mb-2">{{ $page->title }}</h1>
 
     <p class="text-gray-700 text-xl md:mt-0">
-    {{ $page->author }}  •  {{ date('F j, Y', $page->date) }}
+    {{ $page->author }}  •  {{ date('F j, Y', $page->getDate()->getTimestamp()) }}
     @if ($page->source)
         • <a href="{{ $page->source }}" target="_blank">Source</a>
     @endif

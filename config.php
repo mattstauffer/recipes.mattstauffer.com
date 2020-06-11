@@ -1,5 +1,6 @@
 <?php
 
+use App\Contentful\ContentfulCollection;
 use Illuminate\Support\Str;
 
 return [
@@ -17,6 +18,9 @@ return [
             'path' => 'recipes/{filename}',
             'section' => 'content',
             'extends' => '_layouts.recipe',
+            'items' => function ($config) {
+                return  (new ContentfulCollection)->getPosts();
+            },
         ],
         'categories' => [
             'path' => '/recipes/categories/{filename}',
@@ -30,7 +34,8 @@ return [
 
     // helpers
     'getDate' => function ($page) {
-        return Datetime::createFromFormat('U', $page->date);
+        dd($page->date);
+        return Datetime::createFromFormat('Y-m-d', $page->date);
     },
     'getExcerpt' => function ($page, $length = 255) {
         if ($page->excerpt) {
